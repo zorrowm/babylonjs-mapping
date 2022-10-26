@@ -100,7 +100,7 @@ class Game {
 
         this.ourTS = new TileSet(this.scene,this.engine);
 
-        this.ourTS.createGeometry(new Vector2(4,4), 20, 2);
+        this.ourTS.createGeometry(new Vector2(400,400), 20, 2);
         this.ourTS.setRasterProvider("OSM");
 
         this.ourTS.updateRaster(35.2258461, -80.8400777, 16); //charlotte

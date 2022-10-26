@@ -1,4 +1,4 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const path = require('path');
 const fs = require('fs');
 const common = require('./webpack.common.js');
@@ -11,15 +11,15 @@ module.exports = merge(common, {
     devtool: 'inline-source-map',
 
     devServer: {
-        contentBase: path.resolve(appDirectory),
-        publicPath: '/',
+        static: path.resolve(appDirectory),
+        // publicPath: '/',
         compress: true,
         hot: true,
-        open: "Chrome",
-        disableHostCheck: true,
+        open: "chrome",
+        // disableHostCheck: true,
 
         // enable to access from other devices on the network
-        useLocalIp: true,
+        // useLocalIp: true,
         host: '0.0.0.0', 
 
         // if you aren’t using ngrok, and want to connect locally, webxr requires https

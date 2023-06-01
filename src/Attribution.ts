@@ -1,12 +1,11 @@
 import { Scene } from "@babylonjs/core/scene";
-import { Engine, EngineStore, FloatArray, Observable, ThinEngine, VertexBuffer } from "@babylonjs/core";
 import { AdvancedDynamicTexture } from "@babylonjs/gui/2D/";
 import { Button } from "@babylonjs/gui/2D/controls";
 import { Control } from "@babylonjs/gui/2D/controls"; 
 import { StackPanel, Rectangle, TextBlock } from "@babylonjs/gui/2D/controls"; 
 
 export default class Attribution {
-    public advancedTexture: AdvancedDynamicTexture;
+     public advancedTexture: AdvancedDynamicTexture;
 
     private buttonOSM: Button;
     private buttonMB: Button;
@@ -17,7 +16,7 @@ export default class Attribution {
     private attributionList: string[]=[];
     private ourRightPanel: StackPanel;
     private ourLeftPanel: StackPanel;
-
+    
     constructor(private scene: Scene) {
         this.advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
 
@@ -39,9 +38,10 @@ export default class Attribution {
     }
 
     public addAttribution(provider: string) {
-        if(this.attributionList.includes(provider)){
+        //TODO: rewrite this as apparently includes is not in ES2015
+        /*if(this.attributionList.includes(provider)){
             return; //we already contain this provider
-        }
+        }*/
               
         if (provider == "MB") {
             this.addAttributionOSM();
